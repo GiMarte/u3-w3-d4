@@ -1,4 +1,4 @@
-const initialState = {
+/* const initialState = {
   favorites: {},
 };
 
@@ -12,6 +12,24 @@ const setFavoriteReducer = (state = initialState, action) => {
           ...state.favorites,
           [id]: !state.favorites[id],
         },
+      };
+    }
+
+    default:
+      return state;
+  }
+};
+
+export default setFavoriteReducer; */
+
+
+const setFavoriteReducer = (state = {}, action) => {
+  switch (action.type) {
+    case "set_favorite": {
+      const id = action.payload;
+      return {
+        ...state,
+        [id]: !state[id],
       };
     }
 
